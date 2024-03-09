@@ -1,5 +1,6 @@
-import 'package:app_imc/sobrepage.dart';
+import 'package:app_imc/config/drawermenu.dart';
 import 'package:flutter/material.dart';
+// Baixar dependências de "https://pub.dev" e instalar usando as instruções
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 // Site pub.dev
@@ -59,37 +60,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawer(
-          child: ListView(
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(color: Colors.green),
-                child: Text(
-                  "Menu",
-                  style: TextStyle(color: Colors.white, fontSize: 24.0),
-                ),
-              ),
-              ListTile(
-                title: const Text('Cálculo IMC'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Home()),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Sobre o App'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Sobre()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: const Menu(),
         appBar: AppBar(
           title: const Text('Calculadora de IMC'),
           centerTitle: true,
